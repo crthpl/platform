@@ -21,6 +21,7 @@
 	import * as Table from '$lib/components/ui/table';
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import { cn } from '$lib/utils';
+	import MarketPositions from './marketPositions.svelte';
 
 	let { marketData }: { marketData: MarketData } = $props();
 	let id = $derived(marketData.definition.id);
@@ -167,6 +168,10 @@
 				<div>
 					<h2 class="text-center text-lg font-bold">Trade Log</h2>
 					<MarketTrades {trades} />
+				</div>
+				<div>
+					<h2 class="text-center text-lg font-bold">Positions</h2>
+					<MarketPositions {trades} />
 				</div>
 				<div>
 					<h2 class="text-center text-lg font-bold">Order Book</h2>
